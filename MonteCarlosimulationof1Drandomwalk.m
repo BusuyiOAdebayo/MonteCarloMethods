@@ -1,10 +1,10 @@
 %% Monte Carlo simulation of 1D random walk
 % Busuyi Adebayo
 
-clear;
+clear; clc;
 %% calculate diffusion constant
 T = 300; % temperature unit K.
-R = 8.314; % gas constant unit J/K/mol.
+R = 8.314; % Universal gas constant unit J/K/mol.
 Nav = 6.02e23; % Avogadro constant.
 kB = 1.38e-23; % Boltzmann constant.
 yita = 8.9e-4; % water viscosity unit Pa*s.
@@ -35,7 +35,6 @@ area = area*1e-18; % unit m^2.
 dt = dt*1e-3; %unit s.
 %----
 % numm = round(conc*L*area); % number of molecule in the volume.
-S17
 numm = 10000;
 numt = round(lt/dt); % total time step index.
 meandis = L/numm; % average space between two molecules in z.
@@ -48,10 +47,8 @@ display(['simu length = ', num2str(lt/dt)]);
 display(['num molecules = ', num2str(numm)]);
 %------- initialize -----
 mcst = randn(numm, numt); %Monte Carlo space and time. first column not used.
-%mcst = mcst*1.57*sigma; % ??????????? why 1.57 ???????????? golden number 1.618, Great pyrimid side
-height ratio 1.57
-% mcst = mcst2*2*sigma^2; % ??????????? why 1.57 ???????????? golden number 1.618, Great pyrimid side
-height ratio 1.57
+%mcst = mcst*1.57*sigma; % ??????????? why 1.57 ???????????? golden number 1.618, Great pyrimid side height ratio 1.57
+% mcst = mcst2*2*sigma^2; % ??????????? why 1.57 ???????????? golden number 1.618, Great pyrimid side height ratio 1.57
 % mcst = sqrt(abs(mcst)).*mcst2./abs(mcst2);
 mcst = mcst*sigma; %
 traj = zeros(numm, numt); % trajectories of all molecules.
@@ -77,23 +74,22 @@ plot(x, pdf);
 figure; hist(traj(:,11), 100); title('step 10');
 hold on;
 t = dt*10;
-x = -L*1E9:L*1E9;;
+x = -L*1E9:L*1E9;
 x = x*1E-9;
 pdf = numm/100*3*exp(-(x).^2/4/D/t);
 plot(x, pdf);
-S18
 %figure; hist(traj(:,3), 100); title('step 2');
 figure; hist(traj(:,101), 100); title('step 100');
 hold on;
 t = dt*100;
-x = -L*1E9:L*1E9;;
+x = -L*1E9:L*1E9;
 x = x*1E-9;
 pdf = numm/100*3*exp(-(x).^2/4/D/t);
 plot(x, pdf);
 figure; hist(traj(:,1001), 100); title('step 1000');
 hold on;
 t = dt*1000;
-x = -L*1E9:L*1E9;;
+x = -L*1E9:L*1E9;
 x = x*1E-9;
 pdf = numm/100*3*exp(-(x).^2/4/D/t);
 plot(x, pdf);
