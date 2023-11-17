@@ -1,9 +1,6 @@
 %% Monte Carlo simulation of 1D random walk
-% Jixin Chen @ Ohio University started 10/31/2019 driving to Youngstown
-% University seminar talk
-% Jixin Chen 2020-05-25
-% Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free
-% Documentation License, Version 1.3 or any later version published by the Free Software Foundation.
+% Busuyi Adebayo
+
 clear;
 %% calculate diffusion constant
 T = 300; % temperature unit K.
